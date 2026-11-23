@@ -52,6 +52,25 @@
   .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,41,0.42) 0%,rgba(12,10,41,0.5) 100%)}
   .fade{position:absolute;left:0;right:0;bottom:0;height:240px;background:linear-gradient(180deg,rgba(128,64,255,0) 0%,rgba(150,110,255,0.35) 35%,rgba(210,195,255,0.8) 70%,#F7F4FF 100%)}
   .contact-card>*:not(.aura){position:relative;z-index:1}
+  .rows{position:relative;display:flex;flex-direction:column;gap:24px}
+  .row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);align-items:center;gap:64px;padding:40px 8px;border-top:1px solid #E1DAFA}
+  .row-rev .r-media{order:2}
+  .r-text{display:flex;flex-direction:column;gap:14px}
+  .r-tilt{position:relative;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .row:hover .r-tilt{transform:rotate(0deg) scale(1.03) !important}
+  .ml{position:relative;filter:drop-shadow(0 30px 40px rgba(12,10,41,0.25))}
+  .ml-screen{background:#0C0A29;border-radius:16px 16px 4px 4px;padding:12px 12px 14px;border:1px solid #2A2560;position:relative}
+  .ml-cam{position:absolute;top:4px;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:#2A2560}
+  .ml-view{aspect-ratio:16 / 10;border-radius:6px;background:linear-gradient(135deg,#EEE8FF,#E3FFF2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .ml-base{height:14px;margin:0 -7%;border-radius:0 0 20px 20px;background:linear-gradient(180deg,#E4DEFA,#BDB2EC)}
+  .mp{position:absolute;right:-5%;bottom:-10%;width:26%;padding:6px;border-radius:24px;background:#0C0A29;border:1px solid #2A2560;filter:drop-shadow(0 20px 30px rgba(12,10,41,0.35))}
+  .mp-view{aspect-ratio:9 / 19;border-radius:18px;background:linear-gradient(160deg,#E3FFF2,#EEE8FF);display:flex;align-items:center;justify-content:center;font-size:11px}
+  .mp-view span{font-size:11px !important;padding:6px !important}
+  .cur{position:absolute;left:0;top:0;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:#90FFC3;color:#0C0A29;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:14px;pointer-events:none;z-index:5;transform:translate(var(--cx),var(--cy)) scale(0);transition:transform .25s cubic-bezier(.2,.8,.2,1);box-shadow:0 12px 30px -8px rgba(128,64,255,0.45)}
+  .rows.on .cur{transform:translate(var(--cx),var(--cy)) scale(1)}
+  @media (hover: hover){.rows .row{cursor:none}}
+  @media (hover: none){.cur{display:none}}
+  @media (max-width: 860px){.row{grid-template-columns:minmax(0,1fr);gap:36px}.row-rev .r-media{order:0}.mp{right:-2%}}
   .sheet{position:relative;z-index:2;margin-top:-190px;border-radius:56px 56px 0 0;box-shadow:0 -28px 70px -24px rgba(12,10,41,0.75),inset 0 1px 0 rgba(255,255,255,0.9)}
   .sheet-star{position:absolute;left:50%;top:0;translate:-50% -50%;width:72px;height:72px;border-radius:50%;background:#0C0A29;border:1px solid rgba(144,255,195,0.45);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(144,255,195,0.12),0 12px 30px -10px rgba(12,10,41,0.6);z-index:3}
   .sheet-star svg{animation:twinkle 3.2s ease-in-out infinite}
@@ -151,65 +170,65 @@
 <div class="sheet" style="background: linear-gradient(180deg, #ECE5FF 0%, #F7F4FF 280px); color: #0C0A29">
 <div class="sheet-star" aria-hidden="true"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" style="flex: none"><path fill="#90FFC3" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg></div>
 <section id="projetos" style="max-width: 1200px; margin: 0 auto; padding: 112px 32px 112px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 48px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
 <div><p class="twinkle" style="margin: 0 0 12px; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #8040FF; display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg>Projetos selecionados</p>
 <h2 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 52px">O que eu já fiz</h2></div>
 <p style="margin: 0; max-width: 420px; color: #3F3873; font-size: 16px; line-height: 1.6">Cada case conta o problema, o processo e as decisões, não só as telas finais.</p>
 </div>
-<a class="lift reveal" href="case-espaco-do-estudante.html" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); background: #0C0A29; border-radius: 28px; overflow: hidden; text-decoration: none; color: #E6FFFA">
-<div style="padding: 48px; display: flex; flex-direction: column; gap: 18px; justify-content: center">
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="font-size: 13px; font-weight: 600; color: #0C0A29; background: #90FFC3; padding: 6px 12px; border-radius: 999px">O case de que mais me orgulho</span></div>
-<p style="margin: 0; font-size: 15px; color: #A9A3DA">SENAI Soluções Digitais · Espaço do Estudante · App &amp; Web</p>
-<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 38px; line-height: 1.15">Acompanhei o redesign do Espaço do Estudante desde o início — e aprendi a decidir com dados.</h3>
-<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #C3BDEB">Do discovery com stakeholders às telas finais: pesquisa com usuários, testes e design system, com cada decisão apoiada em dados de uso.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="font-size: 13px; color: #D4CFF5; background: #221E52; padding: 6px 12px; border-radius: 8px">Redesign</span><span style="font-size: 13px; color: #D4CFF5; background: #221E52; padding: 6px 12px; border-radius: 8px">Discovery</span><span style="font-size: 13px; color: #D4CFF5; background: #221E52; padding: 6px 12px; border-radius: 8px">Dados</span><span style="font-size: 13px; color: #D4CFF5; background: #221E52; padding: 6px 12px; border-radius: 8px">Design System</span><span style="font-size: 13px; color: #D4CFF5; background: #221E52; padding: 6px 12px; border-radius: 8px">App &amp; Web</span></div>
-<span style="display: inline-flex; align-items: center; gap: 8px; color: #90FFC3; font-weight: 600; font-size: 16px; margin-top: 6px">Ler o case →</span>
-</div>
-<div style="min-height: 460px; background: #1D1948; display: flex; align-items: center; justify-content: center"><span style="font-size: 14px; color: #A9A3DA; border: 1px dashed #3A3478; border-radius: 12px; padding: 12px 16px; background: #16133D">[Imagem do projeto — telas ou fluxo]</span></div>
-</a>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 24px; margin-top: 24px">
-<a class="lift reveal" href="https://www.behance.net/gallery/257485041/Smart-Lab-UXUI-Case-Plataforma-Web" target="_blank" rel="noopener" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D9D2F7; border-radius: 24px; overflow: hidden; text-decoration: none; color: #0C0A29">
-<div style="height: 260px; background: #EEEAFE; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #D9D2F7"><span style="font-size: 14px; color: #6A639E; border: 1px dashed #C7BEF0; border-radius: 12px; padding: 12px 16px; background: #EEEAFE">[Imagem do projeto]</span></div>
-<div style="padding: 30px; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-size: 14px; color: #5B5490">Smart Lab · Plataforma web</p>
-<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 25px; line-height: 1.25">O cliente tinha uma ideia. Os usuários mostraram caminhos novos.</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3F3873">Pesquisa com quem usa de verdade abriu possibilidades que ninguém tinha considerado no início.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="font-size: 13px; color: #3F3873; background: #EAE4FF; padding: 6px 12px; border-radius: 8px">UX Research</span><span style="font-size: 13px; color: #3F3873; background: #EAE4FF; padding: 6px 12px; border-radius: 8px">Plataforma web</span></div>
-<span style="display: inline-flex; align-items: center; gap: 8px; color: #8040FF; font-weight: 600; font-size: 15px; margin-top: 4px">Ver no Behance ↗</span>
+<div class="rows" data-cursor style="--cx: 0px; --cy: 0px">
+<div class="cur" aria-hidden="true"><span>Ver case</span></div>
+<a class="row reveal" href="case-espaco-do-estudante.html" style="text-decoration: none; color: #0C0A29">
+<div class="r-media"><div class="r-tilt" style="transform: rotate(-3deg)"><div class="ml"><div class="ml-screen"><div class="ml-cam"></div><div class="ml-view"><span style="font-size: 14px; color: #6A639E; border: 1px dashed #C7BEF0; border-radius: 12px; padding: 12px 16px; background: #F1ECFF">[Tela do Espaço do Estudante]</span></div></div><div class="ml-base"></div></div><div class="mp"><div class="mp-view"><span style="font-size: 14px; color: #6A639E; border: 1px dashed #C7BEF0; border-radius: 12px; padding: 12px 16px; background: #F1ECFF">[App]</span></div></div></div></div>
+<div class="r-text">
+<span style="align-self: flex-start; font-size: 13px; font-weight: 600; color: #0C0A29; background: #90FFC3; padding: 6px 12px; border-radius: 999px">O case de que mais me orgulho</span>
+<span style="font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 22px; color: #8040FF">01</span>
+<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: clamp(28px, 3vw, 38px); line-height: 1.2">Acompanhei o redesign do Espaço do Estudante desde o início.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3F3873"><span style="font-family: 'Caveat', cursive; font-size: 24px; color: #8040FF; margin-right: 6px">aprendizado →</span>Decidir com dados: cada escolha de design foi apoiada em dados de uso.</p>
+<span class="r-cta" style="font-weight: 600; font-size: 15px; color: #8040FF">Ler o case →</span>
 </div>
 </a>
-<a class="lift reveal" href="case-emserh.html" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D9D2F7; border-radius: 24px; overflow: hidden; text-decoration: none; color: #0C0A29">
-<div style="height: 260px; background: #EEEAFE; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #D9D2F7"><span style="font-size: 14px; color: #6A639E; border: 1px dashed #C7BEF0; border-radius: 12px; padding: 12px 16px; background: #EEEAFE">[Imagem do projeto]</span></div>
-<div style="padding: 30px; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-size: 14px; color: #5B5490">EMSERH · 2024 — 2025</p>
-<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 25px; line-height: 1.25">Levei a voz dos usuários para as decisões de produto na saúde pública do Maranhão.</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3F3873">Entrevistas, matriz CSD, jornadas e testes de usabilidade com protótipos navegáveis.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="font-size: 13px; color: #3F3873; background: #EAE4FF; padding: 6px 12px; border-radius: 8px">UX Research</span><span style="font-size: 13px; color: #3F3873; background: #EAE4FF; padding: 6px 12px; border-radius: 8px">Saúde</span><span style="font-size: 13px; color: #3F3873; background: #EAE4FF; padding: 6px 12px; border-radius: 8px">Usabilidade</span></div>
-<span style="display: inline-flex; align-items: center; gap: 8px; color: #8040FF; font-weight: 600; font-size: 15px; margin-top: 4px">Ler o case →</span>
+<a class="row reveal row-rev" href="https://www.behance.net/gallery/257485041/Smart-Lab-UXUI-Case-Plataforma-Web" target="_blank" rel="noopener" style="text-decoration: none; color: #0C0A29">
+<div class="r-media"><div class="r-tilt" style="transform: rotate(3deg)"><div class="ml"><div class="ml-screen"><div class="ml-cam"></div><div class="ml-view"><span style="font-size: 14px; color: #6A639E; border: 1px dashed #C7BEF0; border-radius: 12px; padding: 12px 16px; background: #F1ECFF">[Tela do Smart Lab]</span></div></div><div class="ml-base"></div></div></div></div>
+<div class="r-text">
+
+<span style="font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 22px; color: #8040FF">02</span>
+<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: clamp(28px, 3vw, 38px); line-height: 1.2">O cliente tinha uma ideia. Os usuários mostraram caminhos novos.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3F3873"><span style="font-family: 'Caveat', cursive; font-size: 24px; color: #8040FF; margin-right: 6px">resultado →</span>Novas direções para o Smart Lab, descobertas conversando com quem usa de verdade.</p>
+<span class="r-cta" style="font-weight: 600; font-size: 15px; color: #8040FF">Ver no Behance ↗</span>
 </div>
 </a>
-<a class="lift reveal" href="https://www.behance.net/gallery/160628171/UXUI-Case-Website-Fabrique" target="_blank" rel="noopener" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D9D2F7; border-radius: 24px; overflow: hidden; text-decoration: none; color: #0C0A29">
-<div style="height: 260px; background: #EEEAFE; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #D9D2F7"><span style="font-size: 14px; color: #6A639E; border: 1px dashed #C7BEF0; border-radius: 12px; padding: 12px 16px; background: #EEEAFE">[Imagem do projeto]</span></div>
-<div style="padding: 30px; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-size: 14px; color: #5B5490">LabDesign · UFMA · Trabalho de conclusão</p>
-<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 25px; line-height: 1.25">Desenhei o site do núcleo Fabrique a partir de pesquisa com usuários.</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3F3873">Estudos de usabilidade, entrevistas e análise de dados que viraram a interface do site.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="font-size: 13px; color: #3F3873; background: #EAE4FF; padding: 6px 12px; border-radius: 8px">Pesquisa</span><span style="font-size: 13px; color: #3F3873; background: #EAE4FF; padding: 6px 12px; border-radius: 8px">UI Design</span><span style="font-size: 13px; color: #3F3873; background: #EAE4FF; padding: 6px 12px; border-radius: 8px">Web</span></div>
-<span style="display: inline-flex; align-items: center; gap: 8px; color: #8040FF; font-weight: 600; font-size: 15px; margin-top: 4px">Ver no Behance ↗</span>
+<a class="row reveal" href="case-emserh.html" style="text-decoration: none; color: #0C0A29">
+<div class="r-media"><div class="r-tilt" style="transform: rotate(-3deg)"><div class="ml"><div class="ml-screen"><div class="ml-cam"></div><div class="ml-view"><span style="font-size: 14px; color: #6A639E; border: 1px dashed #C7BEF0; border-radius: 12px; padding: 12px 16px; background: #F1ECFF">[Tela do projeto EMSERH]</span></div></div><div class="ml-base"></div></div></div></div>
+<div class="r-text">
+
+<span style="font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 22px; color: #8040FF">03</span>
+<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: clamp(28px, 3vw, 38px); line-height: 1.2">Levei a voz dos usuários para as decisões de produto na saúde pública.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3F3873"><span style="font-family: 'Caveat', cursive; font-size: 24px; color: #8040FF; margin-right: 6px">resultado →</span>[Um resultado ou aprendizado do projeto na EMSERH]</p>
+<span class="r-cta" style="font-weight: 600; font-size: 15px; color: #8040FF">Ler o case →</span>
 </div>
 </a>
-<a class="lift reveal" href="https://www.behance.net/gallery/155728925/Identidade-Visual-CPHNAMA" target="_blank" rel="noopener" style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #D9D2F7; border-radius: 24px; overflow: hidden; text-decoration: none; color: #0C0A29">
-<div style="height: 260px; background: #EEEAFE; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #D9D2F7"><span style="font-size: 14px; color: #6A639E; border: 1px dashed #C7BEF0; border-radius: 12px; padding: 12px 16px; background: #EEEAFE">[Imagem do projeto]</span></div>
-<div style="padding: 30px; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-size: 14px; color: #5B5490">Governo do Maranhão · 2021 — 2022</p>
-<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 25px; line-height: 1.25">Criei a identidade visual de um museu de história natural e arqueologia.</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3F3873">Identidade do Centro de Pesquisa de História Natural e Arqueologia do Maranhão, redes sociais e atenção à experiência do público.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="font-size: 13px; color: #3F3873; background: #EAE4FF; padding: 6px 12px; border-radius: 8px">Identidade visual</span><span style="font-size: 13px; color: #3F3873; background: #EAE4FF; padding: 6px 12px; border-radius: 8px">Cultura</span></div>
-<span style="display: inline-flex; align-items: center; gap: 8px; color: #8040FF; font-weight: 600; font-size: 15px; margin-top: 4px">Ver no Behance ↗</span>
+<a class="row reveal row-rev" href="https://www.behance.net/gallery/160628171/UXUI-Case-Website-Fabrique" target="_blank" rel="noopener" style="text-decoration: none; color: #0C0A29">
+<div class="r-media"><div class="r-tilt" style="transform: rotate(3deg)"><div class="ml"><div class="ml-screen"><div class="ml-cam"></div><div class="ml-view"><span style="font-size: 14px; color: #6A639E; border: 1px dashed #C7BEF0; border-radius: 12px; padding: 12px 16px; background: #F1ECFF">[Tela do site Fabrique]</span></div></div><div class="ml-base"></div></div></div></div>
+<div class="r-text">
+
+<span style="font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 22px; color: #8040FF">04</span>
+<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: clamp(28px, 3vw, 38px); line-height: 1.2">Desenhei o site do núcleo Fabrique a partir de pesquisa com usuários.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3F3873"><span style="font-family: 'Caveat', cursive; font-size: 24px; color: #8040FF; margin-right: 6px">resultado →</span>[Um resultado ou aprendizado do site do Fabrique]</p>
+<span class="r-cta" style="font-weight: 600; font-size: 15px; color: #8040FF">Ver no Behance ↗</span>
+</div>
+</a>
+<a class="row reveal" href="https://www.behance.net/gallery/155728925/Identidade-Visual-CPHNAMA" target="_blank" rel="noopener" style="text-decoration: none; color: #0C0A29">
+<div class="r-media"><div class="r-tilt" style="transform: rotate(-3deg)"><div class="ml"><div class="ml-screen"><div class="ml-cam"></div><div class="ml-view"><span style="font-size: 14px; color: #6A639E; border: 1px dashed #C7BEF0; border-radius: 12px; padding: 12px 16px; background: #F1ECFF">[Identidade visual do CPHNAMA]</span></div></div><div class="ml-base"></div></div></div></div>
+<div class="r-text">
+
+<span style="font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 22px; color: #8040FF">05</span>
+<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: clamp(28px, 3vw, 38px); line-height: 1.2">Criei a identidade visual de um museu de história natural e arqueologia.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3F3873"><span style="font-family: 'Caveat', cursive; font-size: 24px; color: #8040FF; margin-right: 6px">aprendizado →</span>[Um resultado ou aprendizado da identidade do museu]</p>
+<span class="r-cta" style="font-weight: 600; font-size: 15px; color: #8040FF">Ver no Behance ↗</span>
 </div>
 </a>
 </div>
-<p style="margin: 40px 0 0; text-align: center; font-size: 16px; color: #3F3873">Mais projetos, como Eduflex e Vital Care, no <a href="https://www.behance.net/stefannecarla" target="_blank" rel="noopener" style="color: #8040FF; font-weight: 600">meu Behance ↗</a></p>
+<p style="margin: 56px 0 0; text-align: center; font-size: 16px; color: #3F3873">Mais projetos, como Eduflex e Vital Care, no <a href="https://www.behance.net/stefannecarla" target="_blank" rel="noopener" style="color: #8040FF; font-weight: 600">meu Behance ↗</a></p>
 </section>
 <section style="background: #E6FFFA">
 <div class="reveal" style="max-width: 1200px; margin: 0 auto; padding: 104px 32px">
@@ -314,6 +333,17 @@
     hero.style.setProperty('--px', 0);
     hero.style.setProperty('--py', 0);
   });
+})();
+(function () {
+  var box = document.querySelector('[data-cursor]');
+  if (!box) return;
+  box.addEventListener('mousemove', function (e) {
+    var r = box.getBoundingClientRect();
+    box.style.setProperty('--cx', (e.clientX - r.left) + 'px');
+    box.style.setProperty('--cy', (e.clientY - r.top) + 'px');
+    box.classList.toggle('on', !!e.target.closest('.row'));
+  });
+  box.addEventListener('mouseleave', function () { box.classList.remove('on'); });
 })();
 </script>
 </body>
