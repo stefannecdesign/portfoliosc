@@ -53,6 +53,12 @@
   .fade{position:absolute;left:0;right:0;bottom:0;height:240px;background:linear-gradient(180deg,rgba(128,64,255,0) 0%,rgba(150,110,255,0.35) 35%,rgba(210,195,255,0.8) 70%,#F7F4FF 100%)}
   .contact-card>*:not(.aura){position:relative;z-index:1}
   .rows{position:relative;display:flex;flex-direction:column;gap:24px}
+  .phones{position:relative;height:560px}
+  .ph-real{position:absolute;width:38%;padding:7px;border-radius:30px;background:#0C0A29;border:1px solid #2A2560;filter:drop-shadow(0 26px 34px rgba(12,10,41,0.35))}
+  .ph-real img{display:block;width:100%;aspect-ratio:375 / 812;object-fit:cover;object-position:top;border-radius:24px}
+  .ph-front{left:16%;top:0;z-index:2}
+  .ph-back{left:47%;top:40px;transform:rotate(8deg)}
+  @media (max-width: 860px){.phones{height:auto;aspect-ratio:1 / 1.02}}
   .row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);align-items:center;gap:64px;padding:40px 8px;border-top:1px solid #E1DAFA}
   .row-rev .r-media{order:2}
   .r-text{display:flex;flex-direction:column;gap:14px}
@@ -68,7 +74,7 @@
   .mp-view span{font-size:11px !important;padding:6px !important}
   .cur{position:absolute;left:0;top:0;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:#90FFC3;color:#0C0A29;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:14px;pointer-events:none;z-index:5;transform:translate(var(--cx),var(--cy)) scale(0);transition:transform .25s cubic-bezier(.2,.8,.2,1);box-shadow:0 12px 30px -8px rgba(128,64,255,0.45)}
   .rows.on .cur{transform:translate(var(--cx),var(--cy)) scale(1)}
-  @media (hover: hover){.rows .row{cursor:none}}
+  @media (hover: hover){.rows a.row{cursor:none}}
   @media (hover: none){.cur{display:none}}
   @media (max-width: 860px){.row{grid-template-columns:minmax(0,1fr);gap:36px}.row-rev .r-media{order:0}.mp{right:-2%}}
   .sheet{position:relative;z-index:2;margin-top:-190px;border-radius:56px 56px 0 0;box-shadow:0 -28px 70px -24px rgba(12,10,41,0.75),inset 0 1px 0 rgba(255,255,255,0.9)}
@@ -197,16 +203,16 @@
 <span class="r-cta" style="font-weight: 600; font-size: 15px; color: #8040FF">Ver no Behance ↗</span>
 </div>
 </a>
-<a class="row reveal" href="case-emserh.html" style="text-decoration: none; color: #0C0A29">
-<div class="r-media"><div class="r-tilt" style="transform: rotate(-3deg)"><div class="ml"><div class="ml-screen"><div class="ml-cam"></div><div class="ml-view"><span style="font-size: 14px; color: #6A639E; border: 1px dashed #C7BEF0; border-radius: 12px; padding: 12px 16px; background: #F1ECFF">[Tela do projeto EMSERH]</span></div></div><div class="ml-base"></div></div></div></div>
+<div class="row reveal" style="color: #0C0A29">
+<div class="r-media"><div class="r-tilt" style="transform: rotate(-3deg)"><div class="phones"><div class="ph-real ph-back"><img src="assets/img/projetos/reino-orcamento.jpg" alt="Tela de orçamento do app Reino com saldo, receitas e despesas" loading="lazy"></div><div class="ph-real ph-front"><img src="assets/img/projetos/reino-home.jpg" alt="Tela inicial do app Reino com membros, grupos, calendário e eventos" loading="lazy"></div></div></div></div>
 <div class="r-text">
 
 <span style="font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: 22px; color: #8040FF">03</span>
-<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: clamp(28px, 3vw, 38px); line-height: 1.2">Levei a voz dos usuários para as decisões de produto na saúde pública.</h3>
-<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3F3873"><span style="font-family: 'Caveat', cursive; font-size: 24px; color: #8040FF; margin-right: 6px">resultado →</span>[Um resultado ou aprendizado do projeto na EMSERH]</p>
-<span class="r-cta" style="font-weight: 600; font-size: 15px; color: #8040FF">Ler o case →</span>
+<h3 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: clamp(28px, 3vw, 38px); line-height: 1.2">Desenhei o Reino, um app de gestão para igrejas, do cadastro de membros às finanças.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3F3873"><span style="font-family: 'Caveat', cursive; font-size: 24px; color: #8040FF; margin-right: 6px">resultado →</span>Um app com dois perfis, igreja e membro, organizando membros, grupos, agenda, avisos, orçamento e patrimônio.</p>
+<span class="r-cta" style="font-weight: 600; font-size: 15px; color: #8040FF">App mobile · UX/UI</span>
 </div>
-</a>
+</div>
 </div>
 <p style="margin: 56px 0 0; text-align: center; font-size: 16px; color: #3F3873">Mais projetos, como o site do Fabrique, a identidade do CPHNAMA e o Eduflex, no <a href="https://www.behance.net/stefannecarla" target="_blank" rel="noopener" style="color: #8040FF; font-weight: 600">meu Behance ↗</a></p>
 </section>
@@ -321,7 +327,7 @@
     var r = box.getBoundingClientRect();
     box.style.setProperty('--cx', (e.clientX - r.left) + 'px');
     box.style.setProperty('--cy', (e.clientY - r.top) + 'px');
-    box.classList.toggle('on', !!e.target.closest('.row'));
+    box.classList.toggle('on', !!e.target.closest('a.row'));
   });
   box.addEventListener('mouseleave', function () { box.classList.remove('on'); });
 })();
