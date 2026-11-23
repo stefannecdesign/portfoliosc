@@ -72,8 +72,12 @@
   .mp{position:absolute;right:-5%;bottom:-10%;width:26%;padding:6px;border-radius:24px;background:#0C0A29;border:1px solid #2A2560;filter:drop-shadow(0 20px 30px rgba(12,10,41,0.35))}
   .mp-view{aspect-ratio:9 / 19;border-radius:18px;background:linear-gradient(160deg,#E3FFF2,#EEE8FF);display:flex;align-items:center;justify-content:center;font-size:11px}
   .mp-view span{font-size:11px !important;padding:6px !important}
-  .cur{position:absolute;left:0;top:0;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:#90FFC3;color:#0C0A29;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:14px;pointer-events:none;z-index:5;transform:translate(var(--cx),var(--cy)) scale(0);transition:transform .25s cubic-bezier(.2,.8,.2,1);box-shadow:0 12px 30px -8px rgba(128,64,255,0.45)}
-  .rows.on .cur{transform:translate(var(--cx),var(--cy)) scale(1)}
+  .cur{position:absolute;left:0;top:0;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(128,64,255,0.55) 0%,rgba(12,10,41,0.92) 62%);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(144,255,195,0.45);display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:5;transform:translate(var(--cx),var(--cy)) scale(0) rotate(-40deg);transition:transform .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 0 0 8px rgba(144,255,195,0.12),0 18px 40px -12px rgba(12,10,41,0.6)}
+  .cur-ring{position:absolute;inset:0;animation:curspin 9s linear infinite}
+  @keyframes curspin{to{transform:rotate(360deg)}}
+  .cur-star{animation:curpulse 1.6s ease-in-out infinite;filter:drop-shadow(0 0 8px rgba(144,255,195,0.8))}
+  @keyframes curpulse{0%,100%{transform:scale(0.85) rotate(0deg)}50%{transform:scale(1.1) rotate(45deg)}}
+  .rows.on .cur{transform:translate(var(--cx),var(--cy)) scale(1) rotate(0deg)}
   @media (hover: hover){.rows a.row{cursor:none}}
   @media (hover: none){.cur{display:none}}
   @media (max-width: 860px){.row{grid-template-columns:minmax(0,1fr);gap:36px}.row-rev .r-media{order:0}.mp{right:-2%}}
@@ -182,7 +186,7 @@
 <p style="margin: 0; max-width: 420px; color: #3F3873; font-size: 16px; line-height: 1.6">Cada case conta o problema, o processo e as decisões, não só as telas finais.</p>
 </div>
 <div class="rows" data-cursor style="--cx: 0px; --cy: 0px">
-<div class="cur" aria-hidden="true"><span>Ver case</span></div>
+<div class="cur" aria-hidden="true"><svg class="cur-ring" viewBox="0 0 120 120" width="120" height="120"><defs><path id="curPath" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"></path></defs><text style="font-family: 'Yeseva One', Georgia, serif; font-size: 15px; fill: #90FFC3"><textPath href="#curPath" textLength="272" lengthAdjust="spacing">ver o case ✦ ver o case ✦</textPath></text></svg><svg class="cur-star" viewBox="0 0 24 24" width="30" height="30"><path fill="#90FFC3" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg></div>
 <a class="row reveal" href="case-espaco-do-estudante.html" style="text-decoration: none; color: #0C0A29">
 <div class="r-media"><div class="r-tilt" style="transform: rotate(-3deg)"><div class="ml"><div class="ml-screen"><div class="ml-cam"></div><div class="ml-view"><img src="assets/img/projetos/ee-web.jpg" alt="Tela de desempenho do Espaço do Estudante na web" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top"></div></div><div class="ml-base"></div></div><div class="mp"><div class="mp-view"><img src="assets/img/projetos/ee-app.jpg" alt="Tela inicial do app Espaço do Estudante com quadro de horários" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top"></div></div></div></div>
 <div class="r-text">
