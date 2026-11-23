@@ -6,7 +6,7 @@ Site estático (HTML + CSS, sem build). Product Designer com raízes em UX Resea
 
 ```
 index.html            Home
-case-senai.html       Case SENAI Soluções Digitais
+case-espaco-do-estudante.html  Case Espaço do Estudante (SENAI)
 case-emserh.html      Case EMSERH
 assets/
   curriculo-stefanne-carla.pdf

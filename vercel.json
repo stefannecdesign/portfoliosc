@@ -1,4 +1,11 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/case-senai",
+      "destination": "/case-espaco-do-estudante",
+      "permanent": true
+    }
+  ]
 }
