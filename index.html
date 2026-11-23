@@ -52,6 +52,17 @@
   .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,41,0.42) 0%,rgba(12,10,41,0.5) 100%)}
   .fade{position:absolute;left:0;right:0;bottom:0;height:240px;background:linear-gradient(180deg,rgba(128,64,255,0) 0%,rgba(150,110,255,0.35) 35%,rgba(210,195,255,0.8) 70%,#F7F4FF 100%)}
   .contact-card>*:not(.aura){position:relative;z-index:1}
+  .sheet{position:relative;z-index:2;margin-top:-190px;border-radius:56px 56px 0 0;box-shadow:0 -28px 70px -24px rgba(12,10,41,0.75),inset 0 1px 0 rgba(255,255,255,0.9)}
+  .sheet-star{position:absolute;left:50%;top:0;translate:-50% -50%;width:72px;height:72px;border-radius:50%;background:#0C0A29;border:1px solid rgba(144,255,195,0.45);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(144,255,195,0.12),0 12px 30px -10px rgba(12,10,41,0.6);z-index:3}
+  .sheet-star svg{animation:twinkle 3.2s ease-in-out infinite}
+  @supports (animation-timeline: scroll()){
+  .sheet{animation:sheetUp linear both;animation-timeline:scroll(root);animation-range:0px 520px}
+  @keyframes sheetUp{from{translate:0 110px;border-radius:120px 120px 0 0}to{translate:0 0;border-radius:56px 56px 0 0}}
+  .hero-in{animation:heroOut linear both;animation-timeline:scroll(root);animation-range:0px 620px}
+  @keyframes heroOut{to{opacity:0.25;transform:scale(0.94) translateY(60px)}}
+  .sheet-star{animation:starSpin linear both;animation-timeline:scroll(root);animation-range:0px 620px}
+  @keyframes starSpin{from{rotate:-90deg;scale:0.6}to{rotate:0deg;scale:1}}
+  }
   .contact-bg{background:linear-gradient(90deg,rgba(12,10,41,0.92) 0%,rgba(12,10,41,0.7) 55%,rgba(12,10,41,0.25) 100%),url(assets/img/moldura-escura.jpg) center/cover no-repeat}
   .soft-bg{background:linear-gradient(rgba(247,244,255,0.86),rgba(247,244,255,0.86)),url(assets/img/moldura-clara.jpg) center/cover no-repeat}
   @keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
@@ -101,8 +112,8 @@
 </nav>
 </header>
 <div class="hero-bg" data-sky style="--px: 0; --py: 0">
-<div class="aura" aria-hidden="true"><div class="mesh"></div><svg class="grain" width="100%" height="100%" preserveAspectRatio="none"><filter id="grainF"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#grainF)"></rect></svg><div class="shade"></div><div class="fade"></div></div>
-<section id="inicio" style="max-width: 1200px; margin: 0 auto; padding: 32px 32px 200px">
+<div class="aura" aria-hidden="true"><div class="mesh"></div><svg class="grain" width="100%" height="100%" preserveAspectRatio="none"><filter id="grainF"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#grainF)"></rect></svg><div class="shade"></div></div>
+<section id="inicio" class="hero-in" style="max-width: 1200px; margin: 0 auto; padding: 32px 32px 270px">
 <div class="ed">
 <figure class="tilt ed-photo" style="margin: 0; background: #FFFDF3; padding: 11px 11px 6px; box-shadow: 0 24px 50px -20px rgba(0,0,0,0.7); transform: rotate(-6deg); box-sizing: border-box">
 <img src="assets/img/fotos/stef-perfil.jpg" alt="Stefanne Carla sorrindo" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover">
@@ -137,7 +148,8 @@
 </div>
 </section>
 </div>
-<div style="background: #F7F4FF; color: #0C0A29">
+<div class="sheet" style="background: linear-gradient(180deg, #ECE5FF 0%, #F7F4FF 280px); color: #0C0A29">
+<div class="sheet-star" aria-hidden="true"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" style="flex: none"><path fill="#90FFC3" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg></div>
 <section id="projetos" style="max-width: 1200px; margin: 0 auto; padding: 112px 32px 112px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 48px">
 <div><p class="twinkle" style="margin: 0 0 12px; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #8040FF; display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg>Projetos selecionados</p>
