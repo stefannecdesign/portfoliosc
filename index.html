@@ -37,6 +37,8 @@
   .tilt:hover{transform:rotate(0deg) scale(1.04) !important}
   .pill{animation:bob 4s ease-in-out infinite;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
   .pill:hover{transform:rotate(0deg) scale(1.12) !important}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:56px;align-items:center}
+  @media (min-width: 900px){.hero-grid{grid-template-columns:340px minmax(0,1fr);gap:72px}.hero-photo{order:-1}}
   .bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(190px,auto);grid-auto-flow:dense;gap:16px}
   .s2{grid-column:span 2}.r2{grid-row:span 2}
   @media (max-width: 900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -59,29 +61,34 @@
 </div>
 </nav>
 </header>
-<section id="inicio" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px 104px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 32px">
-<figure class="tilt" style="margin: 0; width: 240px; background: #FFFDF3; padding: 14px 14px 10px; box-shadow: 0 24px 50px -20px rgba(0,0,0,0.7); transform: rotate(-5deg); box-sizing: border-box">
+<section id="inicio" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px 96px">
+<div class="hero-grid">
+<div class="hero-text">
+<p style="margin: 0 0 24px; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 15px; color: #E6FFFA; background: rgba(12, 10, 41, 0.55); border: 1px solid #3A3478; border-radius: 999px; padding: 8px 16px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#90FFC3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>São Luís (MA) <span aria-hidden="true" style="color: #6A639E">·</span> aberta a trabalho remoto</p>
+<h1 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: clamp(38px, 5vw, 66px); line-height: 1.1; color: #E6FFFA">Product Designer que transforma pesquisa e dados em <span style="color: #90FFC3">produtos digitais claros.</span></h1>
+<p style="margin: 24px 0 0; font-size: 19px; line-height: 1.6; color: #C3BDEB; max-width: 580px">Tenho raízes em UX Research e hoje estou no SENAI Soluções Digitais, cuidando do caminho todo: do discovery ao handoff.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px">
+<a href="#projetos" style="display: inline-flex; align-items: center; gap: 10px; background: #90FFC3; color: #0C0A29; text-decoration: none; font-weight: 600; font-size: 16px; padding: 16px 28px; border-radius: 999px; min-height: 44px; box-sizing: border-box">Ver projetos
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg></a>
+<a href="#contato" style="display: inline-flex; align-items: center; color: #E6FFFA; text-decoration: none; font-weight: 500; font-size: 16px; padding: 16px 28px; border-radius: 999px; border: 1px solid #3A3478; min-height: 44px; box-sizing: border-box">Vamos conversar</a>
+</div>
+</div>
+<div class="hero-photo" style="position: relative; width: 100%; max-width: 340px; height: 500px; justify-self: center">
+<figure class="tilt" style="position: absolute; left: 0; top: 0; margin: 0; width: 250px; background: #FFFDF3; padding: 13px 13px 8px; box-shadow: 0 24px 50px -20px rgba(0,0,0,0.7); transform: rotate(-5deg); box-sizing: border-box; z-index: 1">
 <img src="assets/img/fotos/stef-perfil.jpg" alt="Stefanne Carla sorrindo" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover">
-<figcaption style="font-family: 'Caveat', cursive; font-size: 28px; color: #0C0A29; text-align: center; margin-top: 6px; display: flex; align-items: center; justify-content: center; gap: 6px">Oi, eu sou a Stef! <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg></figcaption>
+<figcaption style="font-family: 'Caveat', cursive; font-size: 27px; color: #0C0A29; text-align: center; margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 6px">Oi, eu sou a Stef! <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg></figcaption>
 </figure>
-<aside class="floaty" aria-label="Meu jeito de trabalhar" style="width: 300px; background: #90FFC3; color: #0C0A29; padding: 24px 26px 28px; box-shadow: 0 24px 50px -22px rgba(0,0,0,0.7); transform: rotate(3deg); box-sizing: border-box; margin-top: 64px">
-<p style="font-family: 'Caveat', cursive; font-size: 28px; margin: 0 0 10px; line-height: 1.1">Meu jeito de trabalhar:</p>
-<ul style="font-family: 'Caveat', cursive; font-size: 24px; line-height: 1.35; margin: 0; padding: 0; list-style: none">
+<aside class="floaty" aria-label="Meu jeito de trabalhar" style="position: absolute; right: 0; bottom: 0; width: 230px; background: #90FFC3; color: #0C0A29; padding: 18px 20px 20px; box-shadow: 0 24px 50px -22px rgba(0,0,0,0.7); transform: rotate(4deg); box-sizing: border-box; z-index: 2">
+<p style="font-family: 'Caveat', cursive; font-size: 25px; margin: 0 0 6px; line-height: 1.1">Meu jeito de trabalhar:</p>
+<ul style="font-family: 'Caveat', cursive; font-size: 21px; line-height: 1.3; margin: 0; padding: 0; list-style: none">
 <li>→ entender antes de desenhar</li>
 <li>→ decidir com dados</li>
 <li>→ simplificar para quem usa</li>
 </ul>
 </aside>
 </div>
-<h1 style="margin: 48px 0 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: clamp(36px, 5.4vw, 68px); line-height: 1.12; color: #E6FFFA; max-width: 1050px">Sou Product Designer com raízes em UX Research. Transformo pesquisa e dados em <span style="color: #90FFC3">produtos digitais claros.</span></h1>
-<p style="margin: 28px 0 0; font-size: 19px; line-height: 1.6; color: #C3BDEB; max-width: 620px">Hoje no SENAI Soluções Digitais, cuidando do caminho todo: do discovery ao handoff.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px">
-<a href="#projetos" style="display: inline-flex; align-items: center; gap: 10px; background: #90FFC3; color: #0C0A29; text-decoration: none; font-weight: 600; font-size: 16px; padding: 16px 28px; border-radius: 999px; min-height: 44px; box-sizing: border-box">Ver projetos
-<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg></a>
-<a href="#contato" style="display: inline-flex; align-items: center; color: #E6FFFA; text-decoration: none; font-weight: 500; font-size: 16px; padding: 16px 28px; border-radius: 999px; border: 1px solid #3A3478; min-height: 44px; box-sizing: border-box">Vamos conversar</a>
 </div>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 64px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 72px">
 <span style="font-family: 'Caveat', cursive; font-size: 24px; color: #C3BDEB; margin-right: 6px">Já trabalhei em →</span>
 <span class="tilt" style="display: inline-flex; align-items: center; gap: 8px; background: #E6FFFA; color: #0C0A29; font-size: 15px; font-weight: 500; padding: 10px 16px; border-radius: 12px; box-shadow: 0 8px 20px -10px rgba(0,0,0,0.5); transform: rotate(-3deg)"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg>SENAI Soluções Digitais</span><span class="tilt" style="display: inline-flex; align-items: center; gap: 8px; background: #E6FFFA; color: #0C0A29; font-size: 15px; font-weight: 500; padding: 10px 16px; border-radius: 12px; box-shadow: 0 8px 20px -10px rgba(0,0,0,0.5); transform: rotate(2deg)"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg>EMSERH</span><span class="tilt" style="display: inline-flex; align-items: center; gap: 8px; background: #E6FFFA; color: #0C0A29; font-size: 15px; font-weight: 500; padding: 10px 16px; border-radius: 12px; box-shadow: 0 8px 20px -10px rgba(0,0,0,0.5); transform: rotate(-1deg)"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg>UEMANET</span><span class="tilt" style="display: inline-flex; align-items: center; gap: 8px; background: #E6FFFA; color: #0C0A29; font-size: 15px; font-weight: 500; padding: 10px 16px; border-radius: 12px; box-shadow: 0 8px 20px -10px rgba(0,0,0,0.5); transform: rotate(3deg)"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg>LabDesign · UFMA</span><span class="tilt" style="display: inline-flex; align-items: center; gap: 8px; background: #E6FFFA; color: #0C0A29; font-size: 15px; font-weight: 500; padding: 10px 16px; border-radius: 12px; box-shadow: 0 8px 20px -10px rgba(0,0,0,0.5); transform: rotate(-2deg)"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg>Governo do Maranhão</span>
 </div>
