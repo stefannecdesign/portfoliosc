@@ -20,17 +20,18 @@
   a{color:#90FFC3}a:hover{color:#C8FFE1}
   .hero-bg{position:relative;overflow:hidden;background:#0C0A29}
   .hero-bg>header,.hero-bg>section{position:relative;z-index:1}
-  .aura{position:absolute;inset:0;pointer-events:none;overflow:hidden;background:#0C0A29}
-  .blob{position:absolute;border-radius:50%;filter:blur(70px);transition:translate 1s cubic-bezier(.2,.8,.2,1);will-change:transform}
-  .b1{width:max(60vw,560px);height:max(60vw,560px);left:-14vw;top:-22vw;background:radial-gradient(circle,rgba(144,255,195,0.95),rgba(144,255,195,0) 65%);animation:flow1 18s ease-in-out infinite;translate:calc(var(--px) * -26px) calc(var(--py) * -18px)}
-  .b2{width:max(75vw,640px);height:max(75vw,640px);left:10vw;bottom:-40vw;background:radial-gradient(circle,rgba(128,64,255,1),rgba(128,64,255,0) 65%);animation:flow2 22s ease-in-out infinite;translate:calc(var(--px) * 20px) calc(var(--py) * 14px)}
-  .b3{width:max(50vw,480px);height:max(50vw,480px);right:-12vw;top:-18vw;background:radial-gradient(circle,rgba(184,155,255,0.85),rgba(184,155,255,0) 65%);animation:flow3 20s ease-in-out infinite;translate:calc(var(--px) * -16px) calc(var(--py) * 12px)}
-  .b4{width:max(42vw,420px);height:max(42vw,420px);right:2vw;bottom:-14vw;background:radial-gradient(circle,rgba(144,255,195,0.6),rgba(144,255,195,0) 65%);animation:flow1 26s ease-in-out infinite reverse;translate:calc(var(--px) * 12px) calc(var(--py) * -10px)}
-  @keyframes flow1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(18vw,8vw) scale(1.15)}66%{transform:translate(6vw,18vw) scale(0.9)}}
-  @keyframes flow2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-18vw,-10vw) scale(1.2)}}
-  @keyframes flow3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-14vw,14vw) scale(1.1)}}
-  .grain{position:absolute;inset:0;opacity:0.2;mix-blend-mode:overlay}
-  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,41,0.12) 0%,rgba(12,10,41,0.3) 72%,#0C0A29 100%)}
+  .aura{position:absolute;inset:0;pointer-events:none;overflow:hidden;background:#0C0A29;border-radius:inherit}
+  .band{position:absolute;left:-30%;width:160%;border-radius:50%;filter:blur(80px);transition:translate 1.2s cubic-bezier(.2,.8,.2,1);will-change:transform}
+  .w1{top:-8%;height:46%;background:radial-gradient(ellipse at center,rgba(144,255,195,0.95),rgba(144,255,195,0) 70%);animation:wave1 16s ease-in-out infinite;translate:calc(var(--px,0) * -22px) calc(var(--py,0) * -14px)}
+  .w2{top:22%;height:50%;background:radial-gradient(ellipse at center,rgba(128,64,255,0.85),rgba(128,64,255,0) 70%);animation:wave2 20s ease-in-out infinite;translate:calc(var(--px,0) * 18px) calc(var(--py,0) * 12px)}
+  .w3{top:50%;height:42%;background:radial-gradient(ellipse at center,rgba(144,255,195,0.75),rgba(144,255,195,0) 70%);animation:wave1 24s ease-in-out infinite reverse;translate:calc(var(--px,0) * -14px) calc(var(--py,0) * 10px)}
+  .w4{top:-4%;height:40%;left:10%;width:120%;background:radial-gradient(ellipse at center,rgba(184,155,255,0.65),rgba(184,155,255,0) 70%);animation:wave2 18s ease-in-out infinite reverse;translate:calc(var(--px,0) * 12px) calc(var(--py,0) * -10px)}
+  @keyframes wave1{0%,100%{transform:translate(-8%,0) rotate(-10deg) scaleY(1)}25%{transform:translate(4%,8%) rotate(-4deg) scaleY(1.35)}50%{transform:translate(10%,2%) rotate(-12deg) scaleY(0.85)}75%{transform:translate(0,-6%) rotate(-6deg) scaleY(1.2)}}
+  @keyframes wave2{0%,100%{transform:translate(6%,0) rotate(8deg) scaleY(1)}30%{transform:translate(-6%,-8%) rotate(3deg) scaleY(1.3)}60%{transform:translate(-12%,4%) rotate(10deg) scaleY(0.9)}}
+  .grain{position:absolute;inset:0;opacity:0.18;mix-blend-mode:overlay}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,41,0.1) 0%,rgba(12,10,41,0.22) 100%)}
+  .fade{position:absolute;left:0;right:0;bottom:0;height:240px;background:linear-gradient(180deg,rgba(128,64,255,0) 0%,rgba(150,110,255,0.35) 35%,rgba(210,195,255,0.8) 70%,#F7F4FF 100%)}
+  .contact-card>*:not(.aura){position:relative;z-index:1}
   .contact-bg{background:linear-gradient(90deg,rgba(12,10,41,0.92) 0%,rgba(12,10,41,0.7) 55%,rgba(12,10,41,0.25) 100%),url(assets/img/moldura-escura.jpg) center/cover no-repeat}
   .soft-bg{background:linear-gradient(rgba(247,244,255,0.86),rgba(247,244,255,0.86)),url(assets/img/moldura-clara.jpg) center/cover no-repeat}
   @keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
@@ -55,17 +56,13 @@
   @media (max-width: 900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media (max-width: 560px){.bento{grid-template-columns:minmax(0,1fr)}.s2{grid-column:span 1}}
   @supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
-  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}.blob{translate:none !important}}
+  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}.band{translate:none !important}}
   </style>
 </head>
 <body>
 <div style="background: #0C0A29; color: #E6FFFA; font-family: Inter, system-ui, sans-serif; min-height: 100vh">
 <div class="hero-bg" data-sky style="--px: 0; --py: 0">
-<div class="aura" aria-hidden="true">
-<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
-<svg class="grain" width="100%" height="100%" preserveAspectRatio="none"><filter id="grainF"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#grainF)"></rect></svg>
-<div class="shade"></div>
-</div>
+<div class="aura" aria-hidden="true"><div class="band w1"></div><div class="band w2"></div><div class="band w3"></div><div class="band w4"></div><svg class="grain" width="100%" height="100%" preserveAspectRatio="none"><filter id="grainF"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#grainF)"></rect></svg><div class="shade"></div><div class="fade"></div></div>
 <header>
 <nav aria-label="Principal" style="max-width: 1200px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <a href="#inicio" aria-label="Stefanne Carla — início" style="display: inline-flex; align-items: center; min-height: 44px"><img src="assets/img/logo-completo-verde.svg" alt="Stefanne Carla" style="height: 44px; width: auto; display: block"></a>
@@ -77,7 +74,7 @@
 </div>
 </nav>
 </header>
-<section id="inicio" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px 96px">
+<section id="inicio" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px 200px">
 <div class="hero-grid">
 <div class="hero-photo" style="position: relative; width: 100%; max-width: 340px; height: 500px; justify-self: center">
 <figure class="tilt" style="position: absolute; left: 0; top: 0; margin: 0; width: 250px; background: #FFFDF3; padding: 13px 13px 8px; box-shadow: 0 24px 50px -20px rgba(0,0,0,0.7); transform: rotate(-5deg); box-sizing: border-box; z-index: 2">
@@ -241,7 +238,8 @@
 </section>
 </div>
 <section id="contato" style="max-width: 1200px; margin: 0 auto; padding: 120px 32px 96px">
-<div class="contact-bg reveal" style="border: 1px solid #2A2560; border-radius: 32px; padding: 72px 56px; display: flex; flex-direction: column; gap: 26px; min-height: 420px; box-sizing: border-box">
+<div class="contact-card reveal" style="position: relative; overflow: hidden; background: #0C0A29; border: 1px solid #2A2560; border-radius: 32px; padding: 72px 56px; display: flex; flex-direction: column; gap: 26px; min-height: 420px; box-sizing: border-box">
+<div class="aura" aria-hidden="true"><div class="band w1"></div><div class="band w2"></div><div class="band w3"></div><div class="band w4"></div><svg class="grain" width="100%" height="100%" preserveAspectRatio="none"><filter id="grainF"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#grainF)"></rect></svg><div class="shade"></div></div>
 <p class="twinkle" style="margin: 0; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #90FFC3; display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg>Contato</p>
 <h2 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: clamp(40px, 6vw, 76px); line-height: 1.05; color: #E6FFFA">Vamos conversar?</h2>
 <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #C3BDEB; max-width: 560px">Quer falar sobre uma vaga, um projeto ou só trocar ideia sobre pesquisa e produto? Me chama, eu respondo.</p>
