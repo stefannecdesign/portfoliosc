@@ -44,8 +44,15 @@
   .tilt:hover{transform:rotate(0deg) scale(1.04) !important}
   .pill{animation:bob 4s ease-in-out infinite;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
   .pill:hover{transform:rotate(0deg) scale(1.12) !important}
-  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:56px;align-items:center}
-  @media (min-width: 900px){.hero-grid{grid-template-columns:340px minmax(0,1fr);gap:72px}.hero-photo{order:-1}}
+  .ed{position:relative;min-height:560px;padding-top:24px}
+  .ed h1{position:relative;z-index:1}
+  .ed-l1{display:block;font-size:clamp(64px,11.5vw,172px);line-height:0.95;letter-spacing:0.01em;padding-left:clamp(0px,15vw,220px)}
+  .ed-l2{display:block;font-size:clamp(84px,13.5vw,200px);line-height:0.85;padding-left:clamp(0px,30vw,440px);transform:rotate(-4deg);transform-origin:left center;margin-top:-0.08em}
+  .ed-photo{position:absolute;left:0;top:0;width:clamp(150px,15vw,205px);z-index:2}
+  .ed-note{position:absolute;right:-1%;top:200px;width:215px;rotate:6deg;z-index:2}
+  .ed-line{position:absolute;right:0;top:470px;width:30%;z-index:0}
+  .ed-intro{position:relative;z-index:1;max-width:400px;margin-top:48px}
+  @media (max-width: 900px){.ed{min-height:0}.ed-photo,.ed-note{position:relative;left:auto;right:auto;top:auto}.ed-photo{width:200px;margin:0 0 24px}.ed-note{margin:28px 0 0 auto}.ed-line{display:none}.ed-l1{padding-left:0;font-size:17vw}.ed-l2{font-size:21vw;padding-left:14vw}}
   .bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(190px,auto);grid-auto-flow:dense;gap:16px}
   .s2{grid-column:span 2}.r2{grid-row:span 2}
   @media (max-width: 900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -69,29 +76,32 @@
 </div>
 </nav>
 </header>
-<section id="inicio" style="max-width: 1200px; margin: 0 auto; padding: 48px 32px 200px">
-<div class="hero-grid">
-<div class="hero-photo" style="position: relative; width: 100%; max-width: 340px; height: 500px; justify-self: center">
-<figure class="tilt" style="position: absolute; left: 0; top: 0; margin: 0; width: 250px; background: #FFFDF3; padding: 13px 13px 8px; box-shadow: 0 24px 50px -20px rgba(0,0,0,0.7); transform: rotate(-5deg); box-sizing: border-box; z-index: 2">
+<section id="inicio" style="max-width: 1200px; margin: 0 auto; padding: 32px 32px 200px">
+<div class="ed">
+<figure class="tilt ed-photo" style="margin: 0; background: #FFFDF3; padding: 11px 11px 6px; box-shadow: 0 24px 50px -20px rgba(0,0,0,0.7); transform: rotate(-6deg); box-sizing: border-box">
 <img src="assets/img/fotos/stef-perfil.jpg" alt="Stefanne Carla sorrindo" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover">
-<figcaption style="font-family: 'Caveat', cursive; font-size: 27px; color: #0C0A29; text-align: center; margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 6px">Oi, eu sou a Stef! <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg></figcaption>
+<figcaption style="font-family: 'Caveat', cursive; font-size: 24px; color: #0C0A29; text-align: center; margin-top: 2px; display: flex; align-items: center; justify-content: center; gap: 6px">Oi, eu sou a Stef! <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" style="flex: none"><path fill="#8040FF" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg></figcaption>
 </figure>
-<aside class="floaty" aria-label="Meu jeito de trabalhar" style="position: absolute; right: 0; bottom: 0; width: 230px; background: #90FFC3; color: #0C0A29; padding: 18px 20px 20px; box-shadow: 0 24px 50px -22px rgba(0,0,0,0.7); transform: rotate(4deg); box-sizing: border-box; z-index: 1">
-<p style="font-family: 'Caveat', cursive; font-size: 25px; margin: 0 0 6px; line-height: 1.1">Meu jeito de trabalhar:</p>
-<ul style="font-family: 'Caveat', cursive; font-size: 21px; line-height: 1.3; margin: 0; padding: 0; list-style: none">
+<h1 style="margin: 0; font-weight: 400">
+<span class="ed-l1" style="font-family: 'Yeseva One', Georgia, serif; font-weight: 400; color: #E6FFFA">PRODUCT</span>
+<span class="ed-l2" style="font-family: 'Caveat', cursive; font-weight: 600; color: #90FFC3">designer</span>
+</h1>
+<aside class="floaty ed-note" aria-label="Meu jeito de trabalhar" style="background: #90FFC3; color: #0C0A29; padding: 16px 18px 18px; box-shadow: 0 24px 50px -22px rgba(0,0,0,0.7); box-sizing: border-box">
+<p style="font-family: 'Caveat', cursive; font-size: 24px; margin: 0 0 4px; line-height: 1.1">Meu jeito de trabalhar:</p>
+<ul style="font-family: 'Caveat', cursive; font-size: 20px; line-height: 1.3; margin: 0; padding: 0; list-style: none">
 <li>→ entender antes de desenhar</li>
 <li>→ decidir com dados</li>
 <li>→ simplificar para quem usa</li>
 </ul>
 </aside>
-</div>
-<div class="hero-text">
-<p style="margin: 0 0 24px; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 15px; color: #E6FFFA; background: rgba(12, 10, 41, 0.55); border: 1px solid #3A3478; border-radius: 999px; padding: 8px 16px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#90FFC3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>São Luís (MA)</p>
-<h1 style="margin: 0; font-family: 'Yeseva One', Georgia, serif; font-weight: 400; font-size: clamp(38px, 5vw, 66px); line-height: 1.1; color: #E6FFFA">Product Designer que transforma pesquisa e dados em <span style="color: #90FFC3">produtos digitais claros.</span></h1>
-<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px">
-<a href="#projetos" style="display: inline-flex; align-items: center; gap: 10px; background: #90FFC3; color: #0C0A29; text-decoration: none; font-weight: 600; font-size: 16px; padding: 16px 28px; border-radius: 999px; min-height: 44px; box-sizing: border-box">Ver projetos
-<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg></a>
-<a href="#contato" style="display: inline-flex; align-items: center; color: #E6FFFA; text-decoration: none; font-weight: 500; font-size: 16px; padding: 16px 28px; border-radius: 999px; border: 1px solid #3A3478; min-height: 44px; box-sizing: border-box">Vamos conversar</a>
+<div class="ed-line" aria-hidden="true"><span style="display: block; height: 1px; background: rgba(230,255,250,0.45)"></span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" style="flex: none; position: absolute; right: -7px; top: -7px"><path fill="#90FFC3" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"></path></svg></div>
+<div class="ed-intro">
+<p style="margin: 0 0 8px; display: flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #90FFC3"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#90FFC3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>São Luís (MA)</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.7; letter-spacing: 0.08em; text-transform: uppercase; color: #D4CFF5">Transformo pesquisa e dados em produtos digitais claros. Raízes em UX Research, do discovery ao handoff.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px">
+<a href="#projetos" style="display: inline-flex; align-items: center; gap: 8px; background: #90FFC3; color: #0C0A29; text-decoration: none; font-weight: 600; font-size: 15px; padding: 13px 22px; border-radius: 999px; min-height: 44px; box-sizing: border-box">Ver projetos
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg></a>
+<a href="#contato" style="display: inline-flex; align-items: center; color: #E6FFFA; text-decoration: none; font-weight: 500; font-size: 15px; padding: 13px 22px; border-radius: 999px; border: 1px solid rgba(230,255,250,0.35); min-height: 44px; box-sizing: border-box">Vamos conversar</a>
 </div>
 </div>
 </div>
